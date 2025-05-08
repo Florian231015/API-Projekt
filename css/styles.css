@@ -1,0 +1,243 @@
+/* --------------------------------------------------
+ * Weather & Travel Companion - Professionelle Optik
+ * styles.css - Überarbeitetes Design für moderne Ästhetik
+ * -------------------------------------------------- */
+
+/* Großzügige Typografie und Farbpalette */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root {
+    /* Farbpalette */
+    --primary-color: #1e3a8a;    /* Dunkles Indigo */
+    --secondary-color: #2563eb;  /* Helleres Blau */
+    --accent-color: #f59e0b;     /* Warmes Gelb */
+    --bg-light: #f3f4f6;         /* Helles Grau */
+    --bg-dark: #111827;          /* Sehr dunkles Grau */
+    --text-color: #374151;       /* Dunkles Grau */
+    --text-light: #ffffff;       /* Weiß */
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.25s;
+    --radius: 0.5rem;
+    --spacing: 1rem;
+}
+
+/* Grundlegende Einstellungen */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+a { text-decoration: none; }
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding: var(--spacing) 0;
+}
+.navbar .navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color var(--transition-speed);
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+/* Header-Section */
+.header-section {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+.header-section .display-4 {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing);
+}
+.header-section .lead {
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.header-section .search-container {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.header-section .form-control-lg {
+    border: none;
+    padding: 1rem;
+}
+.header-section .btn-secondary {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    transition: transform var(--transition-speed);
+}
+.header-section .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+
+
+/* Utility */
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Karten Design */
+.card {
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    margin-bottom: var(--spacing);
+    overflow: hidden;
+    background-color: var(--text-light);
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+.card-body, .card-footer {
+    padding: 1.25rem;
+}
+
+/* Wetter Card */
+.weather-card {
+    display: flex;
+    flex-direction: column;
+}
+.weather-overview {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+}
+.weather-overview img {
+    width: 72px;
+    height: 72px;
+}
+.weather-overview h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+.weather-details .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+.weather-details i {
+    width: 28px;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+
+/* Places Cards */
+.place-card .place-img-container {
+    position: relative;
+    height: 180px;
+    background-color: var(--bg-light);
+}
+.place-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+.place-card:hover img {
+    transform: scale(1.03);
+}
+.place-category {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.place-distance {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    background-color: var(--secondary-color);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+}
+
+/* Länderinfo */
+.country-flag {
+    max-height: 160px;
+    border-radius: var(--radius);
+    border: 1px solid #e5e7eb;
+}
+.country-details .detail-box {
+    background-color: var(--text-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: var(--spacing);
+}
+.country-details h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+footer a {
+    color: var(--accent-color);
+    transition: color var(--transition-speed);
+}
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .weather-overview {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-section {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section .display-4 { font-size: 2.25rem; }
+    .section-title { font-size: 1.5rem; }
+}
